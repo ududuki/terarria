@@ -11,6 +11,11 @@ pygame.display.set_caption('terraria')
 player_right=pygame.image.load("terorrist r.png")
 player_left=pygame.image.load("terorrist l.png")
 
+#блоки
+blocki_griazi=[(pygame.Rect(100,100,100,100),(0,128,0)),
+               (pygame.Rect(200,100,100,100),(0,128,0)),
+               (pygame.Rect(300,100,100,100),(0,128,0))]
+
 # player
 player_img = player_right
 player_img = pygame.transform.scale(player_img,(90,90))
@@ -47,6 +52,8 @@ while running:
 
     screen.fill((8, 239, 255))
     screen.blit(player_img, player_rect)
+    for i,e in blocki_griazi:
+        pygame.draw.rect(screen,e,i)
 
     pygame.display.flip()
     clock.tick(120)
